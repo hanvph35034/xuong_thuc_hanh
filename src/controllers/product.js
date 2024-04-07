@@ -73,7 +73,7 @@ export const updateProductById = async (req, res, next) => {
   }
 };
 
-// ! Xoá cứng! Không dùng
+
 export const removeProductById = async (req, res, next) => {
   try {
     const data = await Product.findByIdAndDelete(req.params.id);

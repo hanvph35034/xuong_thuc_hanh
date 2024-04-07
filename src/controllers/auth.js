@@ -15,14 +15,10 @@ export const register = async (req, res, next) => {
     if (resultValid) {
       return res.status(400).json({ message: resultValid.errors });
     }
-
-
     const checkEmail = await User.findOne({ email });
     if (checkEmail) {
       return res.status(400).json({ message: errorMessages.EMAIL_EXIST });
     }
-
-
     const hashPass = await hashPassword(password);
 
 

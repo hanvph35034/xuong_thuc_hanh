@@ -1,3 +1,4 @@
+
 import mongoose from "mongoose";
 
 const productSchema = new mongoose.Schema(
@@ -35,7 +36,8 @@ const productSchema = new mongoose.Schema(
     },
     category: {
       type: String,
-      default: "No category",
+      default: "",
+      ref : "categories"
     },
     thumbnail: {
       type: String,
@@ -52,4 +54,4 @@ const productSchema = new mongoose.Schema(
   }
 );
 
-export default mongoose.model("Product", productSchema);
+export default mongoose.model("products", productSchema);
