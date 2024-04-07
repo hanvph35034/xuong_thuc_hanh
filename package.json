@@ -15,7 +15,7 @@
     "mongodb",
     "mongoose"
   ],
-  "author": "hoangnm62",
+  "author": "suithm",
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
