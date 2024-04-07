@@ -1,24 +1,48 @@
 import mongoose from "mongoose";
 
-const categorySchema = new mongoose.Schema(
+const productSchema = new mongoose.Schema(
   {
-    name: {
+    title: {
       type: String,
       required: true,
     },
-    slug: {
-      type: String,
+    price: {
+      type: Number,
       required: true,
-      unique: true,
     },
     description: {
       type: String,
     },
-    isHidden: {
+    hide: {
       type: Boolean,
       default: false,
     },
-    products: {
+    discountPercentage: {
+      type: Number,
+      default: 0,
+    },
+    rating: {
+      type: Number,
+      default: 0,
+    },
+    stock: {
+      type: Number,
+      default: 0,
+    },
+    brand: {
+      type: String,
+      default: "No brand",
+    },
+    category: {
+      type: mongoose.Schema.Types.ObjectId,
+      default: "660d72178414e74a3907abdd",
+      ref: "Category",
+    },
+    thumbnail: {
+      type: String,
+      default: "",
+    },
+    images: {
       type: [String],
       default: [],
     },
@@ -29,5 +53,5 @@ const categorySchema = new mongoose.Schema(
   }
 );
 
- const Category =  mongoose.model("Category", categorySchema);
- export default Category;
+const Product = mongoose.model("Product", productSchema);
+export default Product;
